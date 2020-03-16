@@ -28,7 +28,7 @@ class PassportController extends Controller
  
         $token = $user->createToken('Fisheries')->accessToken;
  
-        return response()->json(['token' => $token], 200);
+        return response()->json(['success'=>'true','token' => $token], 200);
     }
  
     /**
@@ -46,9 +46,9 @@ class PassportController extends Controller
  
         if (auth()->attempt($credentials)) {
             $token = auth()->user()->createToken('Fisheries')->accessToken;
-            return response()->json(['token' => $token], 200);
+            return response()->json(['success'=>'true','token' => $token], 200);
         } else {
-            return response()->json(['error' => 'UnAuthorised'], 401);
+            return response()->json(['success'=>'false','error' => 'UnAuthorised'], 401);
         }
     }
 }

@@ -23,5 +23,6 @@ Route::post('register', 'PassportController@register');
 Route::middleware('auth:api')->group(function () {
     Route::get('user', 'PassportController@details');
  
-    Route::resource('fishponds', 'FishpondController');
+    Route::post('fishponds/create', 'FishpondController@store');
+    Route::put('fishponds/uploadpond/{id}','FishpondController@uploadpond');
 });

@@ -15,8 +15,15 @@ class CreateFishpondsTable extends Migration
     {
         Schema::create('fishponds', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('district');
-            $table->string('image');
+            $table->string('fname')->nullable();
+            $table->text('address')->nullable();
+            $table->string('district')->nullable();
+            $table->string('location_of_pond')->nullable();
+            $table->string('tehsil')->nullable();
+            $table->string('image')->nullable();
+            $table->string('area')->nullable();
+            $table->string('epic_no')->nullable();
+            $table->string('name_of_scheme')->nullable();
             $table->string('pondImages')->nullable();
 
             $table->timestamps();
